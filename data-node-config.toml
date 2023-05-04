@@ -1,0 +1,182 @@
+GatewayEnabled = true
+UlimitNOFile = 8192
+
+[API]
+  Level = "Info"
+  Timeout = "5s"
+  Port = 3007
+  WebUIPort = 3006
+  WebUIEnabled = true
+  Reflection = false
+  IP = "0.0.0.0"
+  StreamRetries = 3
+  CoreNodeIP = "127.0.0.1"
+  CoreNodeGRPCPort = 3002
+  ExposeLegacyAPI = false
+  LegacyAPIPortOffset = 100
+
+[CandlesV2]
+  Level = "Info"
+  [CandlesV2.CandleStore]
+    DefaultCandleIntervals = ""
+  [CandlesV2.CandleUpdates]
+    CandleUpdatesStreamBufferSize = 100
+    CandleUpdatesStreamInterval = "1s"
+    CandlesFetchTimeout = "10s"
+
+[Logging]
+  Environment = "dev"
+  [Logging.Custom]
+    [Logging.Custom.Zap]
+      Level = -1
+      Development = true
+      Encoding = "console"
+      OutputPaths = ["stdout"]
+      ErrorOutputPaths = ["stderr"]
+    [Logging.Custom.ZapEncoder]
+      CallerKey = "C"
+      EncodeCaller = "short"
+      EncodeDuration = "string"
+      EncodeLevel = "capital"
+      EncodeName = "full"
+      EncodeTime = "iso8601"
+      LevelKey = "L"
+      LineEnding = "\n"
+      MessageKey = "M"
+      NameKey = "N"
+      TimeKey = "T"
+
+[SQLStore]
+  WipeOnStartup = true
+  Level = "Info"
+  UseEmbedded = false
+  FanOutBufferSize = 1000
+  [SQLStore.ConnectionConfig]
+    Host = "localhost"
+    Port = 5432
+    Username = "vega"
+    Password = "XXX"
+    Database = "data_node_db"
+    UseTransactions = true
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "balances"
+    DataRetentionPeriod = "7 days"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "conflated_balances"
+    DataRetentionPeriod = "1 year"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "ledger"
+    DataRetentionPeriod = "7 days"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "orders_history"
+    DataRetentionPeriod = "7 days"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "trades"
+    DataRetentionPeriod = "7 days"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "trades_candle_1_minute"
+    DataRetentionPeriod = "1 month"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "trades_candle_5_minutes"
+    DataRetentionPeriod = "1 month"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "trades_candle_15_minutes"
+    DataRetentionPeriod = "1 month"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "trades_candle_1_hour"
+    DataRetentionPeriod = "1 year"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "trades_candle_6_hours"
+    DataRetentionPeriod = "1 year"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "market_data"
+    DataRetentionPeriod = "7 days"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "margin_levels"
+    DataRetentionPeriod = "7 days"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "conflated_margin_levels"
+    DataRetentionPeriod = "1 year"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "positions"
+    DataRetentionPeriod = "7 days"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "conflated_positions"
+    DataRetentionPeriod = "1 year"
+
+  [[SQLStore.RetentionPolicies]]
+    HypertableOrCaggName = "liquidity_provisions"
+    DataRetentionPeriod = "1 year"
+
+[Gateway]
+  Level = "Info"
+  Timeout = "5s"
+  SubscriptionRetries = 3
+  GraphQLPlaygroundEnabled = true
+  [Gateway.Node]
+    Port = 3007
+    IP = "0.0.0.0"
+  [Gateway.GraphQL]
+    Port = 3008
+    IP = "0.0.0.0"
+    Enabled = true
+    ComplexityLimit = 0
+    HTTPSEnabled = false
+    AutoCertDomain = ""
+    CertificateFile = ""
+    KeyFile = ""
+  [Gateway.REST]
+    Port = 3009
+    IP = "0.0.0.0"
+    Enabled = true
+    APMEnabled = true
+
+[Metrics]
+  Level = "Info"
+  Timeout = "5s"
+  Port = 2113
+  Path = "/metrics"
+  Enabled = true
+
+[Broker]
+  Level = "Info"
+  SocketServerInboundBufferSize = 10000
+  SocketServerOutboundBufferSize = 10000
+  UseEventFile = false
+  PanicOnError = false
+  [Broker.SocketConfig]
+    IP = "0.0.0.0"
+    Port = 3005
+    MaxReceiveTimeouts = 3
+    TransportType = "tcp"
+  [Broker.FileEventSourceConfig]
+    File = "vega.evt"
+    TimeBetweenBlocks = "1s"
+    SendChannelBufferSize = 1000
+
+[Service]
+  Level = "Info"
+
+[Pprof]
+  Level = "Debug"
+  Enabled = false
+  Port = 6062
+  ProfilesDir = "/home/vega/pprof/datanode"
+  BlockProfileRate = 0
+  MutexProfileFraction = 0
+  WriteEvery = "15m0s"
