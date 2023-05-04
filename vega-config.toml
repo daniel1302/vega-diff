@@ -1,12 +1,11 @@
 NodeMode = "full"
-UlimitNOFile = 8192
+MaxMemoryPercent = 33
 
 [Admin]
   Level = "Info"
   [Admin.Server]
-    SocketPath = "/home/vega/run/vega.sock"
-    HttpPath = "/rpc"
-    Enabled = true
+    SocketPath = "/tmp/vega.sock"
+    HTTPPath = "/rpc"
 
 [API]
   Level = "Info"
@@ -20,6 +19,9 @@ UlimitNOFile = 8192
     IP = "0.0.0.0"
     Enabled = true
     APMEnabled = true
+    [API.REST.CORS]
+      AllowedOrigins = ["*"]
+      MaxAge = 7200
 
 [Blockchain]
   Level = "Info"
@@ -30,11 +32,7 @@ UlimitNOFile = 8192
   ChainProvider = "tendermint"
   [Blockchain.Tendermint]
     Level = "Info"
-    LogTimeDebug = true
-    ClientAddr = "tcp://127.0.0.1:26657"
-    ClientEndpoint = "/websocket"
-    ServerPort = 26658
-    ServerAddr = "localhost"
+    RPCAddr = ""
   [Blockchain.Null]
     Level = "Info"
     BlockDuration = "1s"
@@ -42,6 +40,10 @@ UlimitNOFile = 8192
     GenesisFile = ""
     IP = "localhost"
     Port = 3101
+    [Blockchain.Null.Replay]
+      Record = false
+      Replay = false
+      ReplayFile = ""
 
 [Collateral]
   Level = "Info"
@@ -69,10 +71,10 @@ UlimitNOFile = 8192
     LogRemovedOrdersDebug = false
   [Execution.Risk]
     Level = "Info"
-    LogMarginUpdate = true
+    StreamMarginLevelsVerbose = false
   [Execution.Position]
     Level = "Info"
-    LogPositionUpdate = true
+    StreamPositionVerbose = false
   [Execution.Settlement]
     Level = "Info"
   [Execution.Fee]
@@ -80,11 +82,17 @@ UlimitNOFile = 8192
   [Execution.Liquidity]
     Level = "Info"
 
+[Ethereum]
+  Level = "Info"
+  RPCEndpoint = ""
+  RetryDelay = "15s"
+
 [Processor]
   Level = "Info"
   LogOrderSubmitDebug = true
   LogOrderAmendDebug = false
   LogOrderCancelDebug = false
+  KeepCheckpointsMax = 20
   [Processor.Ratelimit]
     Requests = 500
     PerNBlocks = 10
@@ -120,27 +128,18 @@ UlimitNOFile = 8192
 [Epoch]
   Level = "Info"
 
-[Monitoring]
-  Level = "Info"
-  Interval = "500ms"
-  Retries = 5
-
 [Metrics]
   Level = "Info"
   Timeout = "5s"
   Port = 2112
   Path = "/metrics"
-  Enabled = true
+  Enabled = false
 
 [Governance]
   Level = "Info"
 
 [NodeWallet]
   Level = "Info"
-  [NodeWallet.ETH]
-    Level = "Info"
-    Address = "https://sepolia.infura.io/v3/b4b80b9a3c4940a3a427f727230877e7"
-    ClefAddress = ""
 
 [Assets]
   Level = "Info"
@@ -151,10 +150,10 @@ UlimitNOFile = 8192
 [EvtForward]
   Level = "Info"
   RetryRate = "10s"
-  BlockchainQueueAllowlist = [
-  ]
+  BlockchainQueueAllowlist = []
   [EvtForward.Ethereum]
     Level = "Info"
+    PollEventRetryDuration = "20s"
 
 [Genesis]
   Level = "Info"
@@ -182,6 +181,7 @@ UlimitNOFile = 8192
 
 [Broker]
   Level = "Info"
+  EventBusClientBufferSize = 100000
   [Broker.Socket]
     DialTimeout = "2m0s"
     DialRetryInterval = "5s"
@@ -191,7 +191,7 @@ UlimitNOFile = 8192
     MaxSendTimeouts = 10
     Address = "127.0.0.1"
     Port = 3005
-    Enabled = true
+    Enabled = false
     Transport = "tcp"
   [Broker.File]
     Enabled = false
@@ -215,7 +215,7 @@ UlimitNOFile = 8192
   RetryLimit = 5
   Storage = "GOLevelDB"
   DBPath = ""
-  StartHeight = 0
+  StartHeight = -1
 
 [StateVar]
   Level = "Info"
@@ -223,10 +223,14 @@ UlimitNOFile = 8192
 [ERC20MultiSig]
   Level = "Info"
 
+[ProtocolUpgrade]
+  Level = "Info"
+
 [Pprof]
   Level = "Info"
   Enabled = false
   Port = 6060
-  ProfilesDir = "/home/vega/pprof/vega"
+  ProfilesDir = "/tmp"
   BlockProfileRate = 0
   MutexProfileFraction = 0
+  WriteEvery = "15m0s"
