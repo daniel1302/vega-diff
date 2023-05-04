@@ -18,8 +18,7 @@
         "ed25519"
       ]
     },
-    "version": {
-    }
+    "version": {}
   },
   "validators": [
     {
