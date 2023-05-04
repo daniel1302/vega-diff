@@ -1,6 +1,6 @@
 {
-  "genesis_time": "2023-05-04T13:53:15.967684433Z",
-  "chain_id": "test-chain-flxEXb",
+  "genesis_time": "2023-05-04T14:12:38.130495505Z",
+  "chain_id": "test-chain-yoGOXD",
   "initial_height": "0",
   "consensus_params": {
     "block": {
@@ -22,14 +22,412 @@
   },
   "validators": [
     {
-      "address": "7F6C13C243463020D551FE9E813D9AC3D847B24F",
+      "address": "A4DD0AF93444959959B32F59057E71F46CC5CC55",
       "pub_key": {
         "type": "tendermint/PubKeyEd25519",
-        "value": "5ye1FPzKOhvnFvXNJMKgOJ8FIT7xwL2Lh38RQC+HyO4="
+        "value": "IChJgIe/233kWxGJThlcRHhPy/zozlWhtmAoWCfBJB0="
       },
       "power": "10",
-      "name": ""
+      "name": "Chorus One"
+    },
+    {
+      "address": "37E84F66FD7D8DC6BC65F29CB29E3C7092D53523",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "0ShTSZ9Ss8AFHuDz1nIGMrGucjXhFdJyUTT7Eqibjq8="
+      },
+      "power": "10",
+      "name": "Greenfield One"
+    },
+    {
+      "address": "15B7DA235BEED81158737FBFE79C6264D5E2E5FF",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "g2QGqXnfkNmmVO4QSw/wu5kpk8rbaY+I4qYNzk7QJTc="
+      },
+      "power": "10",
+      "name": "Ryabina"
+    },
+    {
+      "address": "53D53755DA3B815AB029C0062DD6A2B392E640DC",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "Chx00Gr/+/tzwoZVUdMzcIl6O79muzwUIveCfGXaemc="
+      },
+      "power": "10",
+      "name": "Staking Facilities"
+    },
+    {
+      "address": "91484AD0B6343D73690F1D36A80EF92B67622C47",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "uBr9FP/M/QyVtOa3j18+hjksXra7qxCa7e25/FVW5c0="
+      },
+      "power": "10",
+      "name": "NodesGuru"
+    },
+    {
+      "address": "D13E2E3867E1B13DEBA8C9E225B4296477098DEA",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "YnG3Ll/e/k1kVEvms90GAuwdf3N20CESh4wAritLgyU="
+      },
+      "power": "10",
+      "name": "Figment"
+    },
+    {
+      "address": "0C8752F75C084919BAB5A6BC7BE8B21D8222262F",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "hz528OlxLZoV+476oJP2lzrhAZwZNjjLAfvpd2wLvcg="
+      },
+      "power": "10",
+      "name": "XPRV"
+    },
+    {
+      "address": "EB6378B3DA7659C369C5590DA1FFB7211FC4FC2F",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "+eIIplOcSftzYKXdSIvSmG0LgK6avHDYK3LpECe1JNs="
+      },
+      "power": "10",
+      "name": "Commodum DAO"
+    },
+    {
+      "address": "3619F6EC431527F02457875B7355041ADBB54772",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "7xmxwJpTnPHt6u+18ggFIJzlTWtfKSLKBFkGD6AC99o="
+      },
+      "power": "10",
+      "name": "P2P"
+    },
+    {
+      "address": "13FA0B679D6064772567C7A6050B42CCA1C7C8CD",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "7kRL1jCJH8QUDTHK90/Nz9lIAvl8/s1Z70XL1EXFkaM="
+      },
+      "power": "10",
+      "name": "Nala DAO"
+    },
+    {
+      "address": "B8095C5B57FDC602137B96E0426A3770DCF10323",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "2ze1jT6SxaWUI9yECwYJaPIf1lBSU7myu6wfe4wqnMs="
+      },
+      "power": "10",
+      "name": "Lovali"
+    },
+    {
+      "address": "34DA2E4636D96ABE36AE63D3A01A9AC86802A1CF",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "vQVqN1N0+k1GtGZmB8gb1b9BR/cdcYFZtxgiywaTVYM="
+      },
+      "power": "10",
+      "name": "B-Harvest"
+    },
+    {
+      "address": "A773EEC659DE98B71E2324E7E1815A2AD470D411",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "GaMcnnlXJGAgf43pQIg3UBwQqlyLRH7ow+CTzzVtBIQ="
+      },
+      "power": "10",
+      "name": "RBF"
     }
   ],
-  "app_hash": ""
+  "app_hash": "",
+  "app_state": {
+    "assets": {
+      "VOTE": {
+        "name": "VOTE",
+        "symbol": "VOTE",
+        "decimals": 5,
+        "quantum": "1",
+        "source": {
+          "builtin_asset": {
+            "max_faucet_amount_mint": "10000"
+          }
+        }
+      }
+    },
+    "validators": {
+      "IChJgIe/233kWxGJThlcRHhPy/zozlWhtmAoWCfBJB0=": {
+        "id": "efbdf943443bd7595e83b0d7e88f37b7932d487d1b94aab3d004997273bb43fc",
+        "vega_pub_key": "b7f43431670b6ec2997e8aba976778ce8e031d962d1f1d24102a58e59b781a4e",
+        "ethereum_address": "0x28d5a6B3D96836B2341C95C1587B474F38d33Ac2",
+        "tm_pub_key": "IChJgIe/233kWxGJThlcRHhPy/zozlWhtmAoWCfBJB0=",
+        "info_url": "https://chorus.one",
+        "country": "CH",
+        "name": "Chorus One",
+        "avatar_url": "https://chorus.one/logo-360x360.jpg",
+        "vega_pub_key_index": 1
+      },
+      "0ShTSZ9Ss8AFHuDz1nIGMrGucjXhFdJyUTT7Eqibjq8=": {
+        "id": "126751c5830b50d39eb85412fb2964f46338cce6946ff455b73f1b1be3f5e8cc",
+        "vega_pub_key": "a6e6f7daf8610f9242ab6ab46b394f6fb79cf9533d48051ca7a2f142b8b700a8",
+        "ethereum_address": "0x14174f3c9443EdC12685578FE4d165be5f57fBd3",
+        "tm_pub_key": "0ShTSZ9Ss8AFHuDz1nIGMrGucjXhFdJyUTT7Eqibjq8=",
+        "info_url": "https://www.greenfield.one",
+        "country": "Germany",
+        "name": "Greenfield One",
+        "avatar_url": "https://www.greenfield.one/avatar.png",
+        "vega_pub_key_index": 1
+      },
+      "g2QGqXnfkNmmVO4QSw/wu5kpk8rbaY+I4qYNzk7QJTc=": {
+        "id": "5db9794f44c85b4b259907a00c8ea2383ad688dfef6ffb72c8743b6ae3eaefd4",
+        "vega_pub_key": "437a951ef5f30cccf8840fec47798d456512269fee7bae82b43630861d04cbca",
+        "ethereum_address": "0xe64f539dc59DA01ec95d10a665581fDbA0194215",
+        "tm_pub_key": "g2QGqXnfkNmmVO4QSw/wu5kpk8rbaY+I4qYNzk7QJTc=",
+        "info_url": "https://ryabina.io",
+        "country": "FR",
+        "name": "Ryabina",
+        "avatar_url": "https://ryabina.io/apple-touch-icon.png",
+        "vega_pub_key_index": 1
+      },
+      "Chx00Gr/+/tzwoZVUdMzcIl6O79muzwUIveCfGXaemc=": {
+        "id": "f3022974212780ea1196af08fd2e8a9c0d784d0be8e97637bd5e763ac4c219bd",
+        "vega_pub_key": "672552932d651349641fa3181578a2fe98bb5deedfcda0b480d05442a41b76af",
+        "ethereum_address": "0x9211696Be4bE710C83DA8a36e68C25Cc4020E979",
+        "tm_pub_key": "Chx00Gr/+/tzwoZVUdMzcIl6O79muzwUIveCfGXaemc=",
+        "info_url": "https://stakingfacilities.com",
+        "country": "DE",
+        "name": "Staking Facilities",
+        "avatar_url": "https://s3.amazonaws.com/keybase_processed_uploads/bfe5fc72eaafa5a4444eb048fd88a705_360_360.jpg",
+        "vega_pub_key_index": 1
+      },
+      "uBr9FP/M/QyVtOa3j18+hjksXra7qxCa7e25/FVW5c0=": {
+        "id": "4f69b1784656174e89eb094513b7136e88670b42517ed0e48cb6fd3062eb8478",
+        "vega_pub_key": "f4686749895bf51c6df4092ef6be4279c384a3c380c24ea7a2fd20afc602a35d",
+        "ethereum_address": "0xF3920d9Ab483177C99846503A118fa84A557bB27",
+        "tm_pub_key": "uBr9FP/M/QyVtOa3j18+hjksXra7qxCa7e25/FVW5c0=",
+        "info_url": "https://stake.nodes.guru/",
+        "country": "RU",
+        "name": "NodesGuru",
+        "avatar_url": "https://nodes.guru/new_logo.svg",
+        "vega_pub_key_index": 1
+      },
+      "YnG3Ll/e/k1kVEvms90GAuwdf3N20CESh4wAritLgyU=": {
+        "id": "ac735acc9ab11cf1d8c59c2df2107e00092b4ac96451cb137a1629af5b66242a",
+        "vega_pub_key": "07c616caa7d2f12ece01466463ead4ebc921bc9ac79a05e28c5208beffa49f40",
+        "ethereum_address": "0x6532A4E841136d5eDC346A1bE2a6D518E0395520",
+        "tm_pub_key": "YnG3Ll/e/k1kVEvms90GAuwdf3N20CESh4wAritLgyU=",
+        "info_url": "https://figment.io",
+        "country": "Canada",
+        "name": "Figment",
+        "avatar_url": "https://figment.io/apple-touch-icon.png",
+        "vega_pub_key_index": 1
+      },
+      "hz528OlxLZoV+476oJP2lzrhAZwZNjjLAfvpd2wLvcg=": {
+        "id": "74023df02b8afc9eaf3e3e2e8b07eab1d2122ac3e74b1b0222daf4af565ad3dd",
+        "vega_pub_key": "10b06fec6398d9e9d542d7b7d36933a1e6f0bb0631b0e532681c05123d4bd5aa",
+        "ethereum_address": "0x1b79814f66773df25ba126E8d1A557ab2676246f",
+        "tm_pub_key": "hz528OlxLZoV+476oJP2lzrhAZwZNjjLAfvpd2wLvcg=",
+        "info_url": "https://xprv.io",
+        "country": "UK",
+        "name": "XPRV",
+        "avatar_url": "",
+        "vega_pub_key_index": 1
+      },
+      "+eIIplOcSftzYKXdSIvSmG0LgK6avHDYK3LpECe1JNs=": {
+        "id": "b861c11eb825d55f835aec898b3caae66a681a354bcb59651d5b3faf02b34844",
+        "vega_pub_key": "cf295dff6d9506e8a905d168a44dfcff2f64bd0a6671783a469f8322959c62e2",
+        "ethereum_address": "0xa88E4b7a9DA62fd82e9f65a60450Fc8237468b0B",
+        "tm_pub_key": "+eIIplOcSftzYKXdSIvSmG0LgK6avHDYK3LpECe1JNs=",
+        "info_url": "https://commodum.io",
+        "country": "UK",
+        "name": "Commodum DAO",
+        "avatar_url": "https://www.commodum.io/images/logo.png",
+        "vega_pub_key_index": 1
+      },
+      "7xmxwJpTnPHt6u+18ggFIJzlTWtfKSLKBFkGD6AC99o=": {
+        "id": "5ca98e0dd81143fafea3a3abcefafee73f3886ac97053db8b446593e75c10e9d",
+        "vega_pub_key": "aad2be546ba83cbcab4c1d57ebe22b4a942f294f54333f1a7c2c9ef0e9fe19bb",
+        "ethereum_address": "0x7E8e08F2991dfD6e8E142F5d5219EcA44900ec9b",
+        "tm_pub_key": "7xmxwJpTnPHt6u+18ggFIJzlTWtfKSLKBFkGD6AC99o=",
+        "info_url": "https://p2p.org",
+        "country": "RU",
+        "name": "P2P.ORG Validator",
+        "avatar_url": "https://storage.googleapis.com/p2p-logo/prod/p2p-black.svg",
+        "vega_pub_key_index": 1
+      },
+      "7kRL1jCJH8QUDTHK90/Nz9lIAvl8/s1Z70XL1EXFkaM=": {
+        "id": "8d33c6e06207ed5735c8b5b6c0c6234f44eb381b242a25a538ed3315369d2203",
+        "vega_pub_key": "7d69327393cdfaaae50e5e215feca65273eafabfb38f32b8124e66298af346d5",
+        "ethereum_address": "0x4e5fe67964254EA035F7F927803102712557edEa",
+        "tm_pub_key": "7kRL1jCJH8QUDTHK90/Nz9lIAvl8/s1Z70XL1EXFkaM=",
+        "info_url": "https://www.naladao.com",
+        "name": "Nala DAO",
+        "country": "AU",
+        "avatar_url": "https://nala-images.s3.ap-southeast-2.amazonaws.com/icons/nalasmall.jpg",
+        "vega_pub_key_index": 1
+      },
+      "2ze1jT6SxaWUI9yECwYJaPIf1lBSU7myu6wfe4wqnMs=": {
+        "id": "25794776055552a92e7b27dd8f15563ffb78defe7694d6c4da8bb258daca897c",
+        "vega_pub_key": "b7e500deb24cc19bd6ebb2311997f0904ca0d9e51541249e9650ab41fd8ac376",
+        "ethereum_address": "0x94124b36696a1aa9DD65e70659Da161A925E3FB5",
+        "tm_pub_key": "2ze1jT6SxaWUI9yECwYJaPIf1lBSU7myu6wfe4wqnMs=",
+        "info_url": "https://lovali.xyz",
+        "country": "FI",
+        "name": "Lovali",
+        "avatar_url": "https://lovali.xyz/images/logo.png",
+        "vega_pub_key_index": 1
+      },
+      "vQVqN1N0+k1GtGZmB8gb1b9BR/cdcYFZtxgiywaTVYM=": {
+        "id": "43697a3e911d8b70c0ce672adde17a5c38ca8f6a0486bf85ed0546e1b9a82887",
+        "vega_pub_key": "68ed0770fc3e67b74d09c05443243d27e29a8513dc0e8628beb98338cd509159",
+        "ethereum_address": "0xAd3EB716a9C4B7eA98b175f4ca73ad01289104B0",
+        "tm_pub_key": "vQVqN1N0+k1GtGZmB8gb1b9BR/cdcYFZtxgiywaTVYM=",
+        "info_url": "https://bharvest.io",
+        "country": "KR",
+        "name": "B-Harvest",
+        "avatar_url": "",
+        "vega_pub_key_index": 1
+      },
+      "GaMcnnlXJGAgf43pQIg3UBwQqlyLRH7ow+CTzzVtBIQ=": {
+        "id": "55504e9bfd914a7bbefa342c82f59a2f4dee344e5b6863a14c02a812f4fbde32",
+        "vega_pub_key": "0ac70c4ccc7f961614fe49b93e639ddf916269b7dcf8391db264cefeadf5a6b7",
+        "ethereum_address": "0xaa5184EB96aDf3f14151412fd895a30F5A2E6995",
+        "tm_pub_key": "GaMcnnlXJGAgf43pQIg3UBwQqlyLRH7ow+CTzzVtBIQ=",
+        "info_url": "https://rbf.capital/staking",
+        "country": "CZ",
+        "name": "RBF",
+        "avatar_url": "",
+        "vega_pub_key_index": 1
+      }
+    },
+    "network": {
+      "replay_attack_threshold": 150
+    },
+    "network_parameters": {
+      "blockchains.ethereumConfig": "{\"network_id\": \"XXX\", \"chain_id\": \"XXX\", \"collateral_bridge_contract\": { \"address\": \"0xXXX\" }, \"confirmations\": 3, \"staking_bridge_contract\": { \"address\": \"0xXXX\", \"deployment_block_height\": 0}, \"token_vesting_contract\": { \"address\": \"0xXXX\", \"deployment_block_height\": 0 }, \"multisig_control_contract\": { \"address\": \"0xXXX\", \"deployment_block_height\": 0 }}",
+      "governance.proposal.asset.maxClose": "8760h0m0s",
+      "governance.proposal.asset.maxEnact": "8760h0m0s",
+      "governance.proposal.asset.minClose": "48h0m0s",
+      "governance.proposal.asset.minEnact": "48h0m0s",
+      "governance.proposal.asset.minProposerBalance": "1",
+      "governance.proposal.asset.minVoterBalance": "1",
+      "governance.proposal.asset.requiredMajority": "0.66",
+      "governance.proposal.asset.requiredParticipation": "0.00001",
+      "governance.proposal.freeform.maxClose": "8760h0m0s",
+      "governance.proposal.freeform.minClose": "48h0m0s",
+      "governance.proposal.freeform.minProposerBalance": "1",
+      "governance.proposal.freeform.minVoterBalance": "1",
+      "governance.proposal.freeform.requiredMajority": "0.66",
+      "governance.proposal.freeform.requiredParticipation": "0.00001",
+      "governance.proposal.market.maxClose": "8760h0m0s",
+      "governance.proposal.market.maxEnact": "8760h0m0s",
+      "governance.proposal.market.minClose": "48h0m0s",
+      "governance.proposal.market.minEnact": "48h0m0s",
+      "governance.proposal.market.minProposerBalance": "1",
+      "governance.proposal.market.minVoterBalance": "1",
+      "governance.proposal.market.requiredMajority": "0.66",
+      "governance.proposal.market.requiredParticipation": "0.00001",
+      "governance.proposal.updateAsset.maxClose": "8760h0m0s",
+      "governance.proposal.updateAsset.maxEnact": "8760h0m0s",
+      "governance.proposal.updateAsset.minClose": "48h0m0s",
+      "governance.proposal.updateAsset.minEnact": "48h0m0s",
+      "governance.proposal.updateAsset.minProposerBalance": "1",
+      "governance.proposal.updateAsset.minVoterBalance": "1",
+      "governance.proposal.updateAsset.requiredMajority": "0.66",
+      "governance.proposal.updateAsset.requiredParticipation": "0.00001",
+      "governance.proposal.updateMarket.maxClose": "8760h0m0s",
+      "governance.proposal.updateMarket.maxEnact": "8760h0m0s",
+      "governance.proposal.updateMarket.minClose": "48h0m0s",
+      "governance.proposal.updateMarket.minEnact": "48h0m0s",
+      "governance.proposal.updateMarket.minProposerBalance": "1",
+      "governance.proposal.updateMarket.minProposerEquityLikeShare": "0.66",
+      "governance.proposal.updateMarket.minVoterBalance": "1",
+      "governance.proposal.updateMarket.requiredMajority": "0.66",
+      "governance.proposal.updateMarket.requiredMajorityLP": "0.66",
+      "governance.proposal.updateMarket.requiredParticipation": "0.00001",
+      "governance.proposal.updateMarket.requiredParticipationLP": "0.00001",
+      "governance.proposal.updateNetParam.maxClose": "8760h0m0s",
+      "governance.proposal.updateNetParam.maxEnact": "8760h0m0s",
+      "governance.proposal.updateNetParam.minClose": "48h0m0s",
+      "governance.proposal.updateNetParam.minEnact": "48h0m0s",
+      "governance.proposal.updateNetParam.minProposerBalance": "1",
+      "governance.proposal.updateNetParam.minVoterBalance": "1",
+      "governance.proposal.updateNetParam.requiredMajority": "0.66",
+      "governance.proposal.updateNetParam.requiredParticipation": "0.00001",
+      "limits.assets.proposeEnabledFrom": "",
+      "limits.markets.maxPeggedOrders": "1500",
+      "limits.markets.proposeEnabledFrom": "",
+      "market.auction.maximumDuration": "168h0m0s",
+      "market.auction.minimumDuration": "30m0s",
+      "market.fee.factors.infrastructureFee": "0.0005",
+      "market.fee.factors.makerFee": "0.00025",
+      "market.liquidity.bondPenaltyParameter": "1",
+      "market.liquidity.maximumLiquidityFeeFactorLevel": "1",
+      "market.liquidity.minimum.probabilityOfTrading.lpOrders": "1e-8",
+      "market.liquidity.probabilityOfTrading.tau.scaling": "1",
+      "market.liquidity.providers.fee.distributionTimeStep": "0s",
+      "market.liquidity.stakeToCcyVolume": "1",
+      "market.liquidity.targetstake.triggering.ratio": "0",
+      "market.liquidityProvision.minLpStakeQuantumMultiple": "1",
+      "market.liquidityProvision.shapes.maxSize": "5",
+      "market.margin.scalingFactors": "{\"search_level\": 1.1, \"initial_margin\": 1.2, \"collateral_release\": 1.4}",
+      "market.monitor.price.defaultParameters": "{\"triggers\": []}",
+      "market.stake.target.scalingFactor": "10",
+      "market.stake.target.timeWindow": "1h0m0s",
+      "market.value.windowLength": "168h0m0s",
+      "network.checkpoint.timeElapsedBetweenCheckpoints": "1m",
+      "network.floatingPointUpdates.delay": "5m",
+      "network.markPriceUpdateMaximumFrequency": "5s",
+      "network.transaction.defaultgas": "1",
+      "network.transactions.maxgasperblock": "500000",
+      "network.transactions.minBlockCapacity": "32",
+      "network.validators.ersatz.multipleOfTendermintValidators": "0.5",
+      "network.validators.ersatz.rewardFactor": "0.5",
+      "network.validators.incumbentBonus": "1",
+      "network.validators.minimumEthereumEventsForNewValidator": "3",
+      "network.validators.multisig.numberOfSigners": "13",
+      "network.validators.tendermint.number": "30",
+      "reward.asset": "VOTE",
+      "reward.staking.delegation.competitionLevel": "1.1",
+      "reward.staking.delegation.delegatorShare": "0.883",
+      "reward.staking.delegation.maxPayoutPerEpoch": "7000000000000000000000",
+      "reward.staking.delegation.maxPayoutPerParticipant": "0",
+      "reward.staking.delegation.minValidators": "5",
+      "reward.staking.delegation.minimumValidatorStake": "0",
+      "reward.staking.delegation.optimalStakeMultiplier": "3.0",
+      "reward.staking.delegation.payoutDelay": "24h0m0s",
+      "reward.staking.delegation.payoutFraction": "1.0",
+      "rewards.marketCreationQuantumMultiple": "10000000",
+      "snapshot.interval.length": "1000",
+      "spam.pow.difficulty": "15",
+      "spam.pow.hashFunction": "sha3_24_rounds",
+      "spam.pow.increaseDifficulty": "0",
+      "spam.pow.numberOfPastBlocks": "100",
+      "spam.pow.numberOfTxPerBlock": "2",
+      "spam.protection.delegation.min.tokens": "1000000000000000000",
+      "spam.protection.max.batchSize": "15",
+      "spam.protection.max.delegations": "390",
+      "spam.protection.max.proposals": "3",
+      "spam.protection.max.votes": "3",
+      "spam.protection.maxUserTransfersPerEpoch": "20",
+      "spam.protection.minMultisigUpdates": "100000000000000000000",
+      "spam.protection.minimumWithdrawalQuantumMultiple": "10",
+      "spam.protection.proposal.min.tokens": "100000000000000000000000",
+      "spam.protection.voting.min.tokens": "100000000000000000000",
+      "transfer.fee.factor": "0.001",
+      "transfer.minTransferQuantumMultiple": "0.1",
+      "validator.performance.scaling.factor": "0",
+      "validators.delegation.minAmount": "1",
+      "validators.epoch.length": "24h0m0s",
+      "validators.vote.required": "0.67"
+    },
+    "network_parameters_checkpoint_overwrite": null,
+    "network_limits": {
+      "propose_market_enabled": true,
+      "propose_asset_enabled": true
+    },
+    "checkpoint": {
+      "load_hash": "",
+      "state": ""
+    }
+  }
 }
