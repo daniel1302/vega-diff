@@ -1,19 +1,32 @@
 GatewayEnabled = true
-UlimitNOFile = 8192
+AutoInitialiseFromNetworkHistory = false
+ChainID = "vega-mainnet-011"
+MaxMemoryPercent = 33
+
+[Admin]
+  Level = "Info"
+  [Admin.Server]
+    SocketPath = "/tmp/datanode.sock"
+    HTTPPath = "/datanode/rpc"
 
 [API]
   Level = "Info"
   Timeout = "5s"
   Port = 3007
   WebUIPort = 3006
-  WebUIEnabled = true
+  WebUIEnabled = false
   Reflection = false
   IP = "0.0.0.0"
   StreamRetries = 3
   CoreNodeIP = "127.0.0.1"
   CoreNodeGRPCPort = 3002
-  ExposeLegacyAPI = false
-  LegacyAPIPortOffset = 100
+  MaxSubscriptionPerClient = 250
+  [API.RateLimit]
+    Enabled = true
+    Rate = 20.0
+    Burst = 100
+    TTL = "1h0m0s"
+    BanFor = "10m0s"
 
 [CandlesV2]
   Level = "Info"
@@ -23,6 +36,7 @@ UlimitNOFile = 8192
     CandleUpdatesStreamBufferSize = 100
     CandleUpdatesStreamInterval = "1s"
     CandlesFetchTimeout = "10s"
+    CandleUpdatesStreamSubscriptionMsgBufferSize = 100
 
 [Logging]
   Environment = "dev"
@@ -47,111 +61,71 @@ UlimitNOFile = 8192
       TimeKey = "T"
 
 [SQLStore]
-  WipeOnStartup = true
+  WipeOnStartup = false
   Level = "Info"
   UseEmbedded = false
   FanOutBufferSize = 1000
+  DisableMinRetentionPolicyCheckForUseInSysTestsOnly = false
+  RetentionPeriod = "forever"
+  VerboseMigration = false
   [SQLStore.ConnectionConfig]
     Host = "localhost"
     Port = 5432
     Username = "vega"
-    Password = "XXX"
-    Database = "data_node_db"
-    UseTransactions = true
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "balances"
-    DataRetentionPeriod = "7 days"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "conflated_balances"
-    DataRetentionPeriod = "1 year"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "ledger"
-    DataRetentionPeriod = "7 days"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "orders_history"
-    DataRetentionPeriod = "7 days"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "trades"
-    DataRetentionPeriod = "7 days"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "trades_candle_1_minute"
-    DataRetentionPeriod = "1 month"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "trades_candle_5_minutes"
-    DataRetentionPeriod = "1 month"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "trades_candle_15_minutes"
-    DataRetentionPeriod = "1 month"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "trades_candle_1_hour"
-    DataRetentionPeriod = "1 year"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "trades_candle_6_hours"
-    DataRetentionPeriod = "1 year"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "market_data"
-    DataRetentionPeriod = "7 days"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "margin_levels"
-    DataRetentionPeriod = "7 days"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "conflated_margin_levels"
-    DataRetentionPeriod = "1 year"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "positions"
-    DataRetentionPeriod = "7 days"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "conflated_positions"
-    DataRetentionPeriod = "1 year"
-
-  [[SQLStore.RetentionPolicies]]
-    HypertableOrCaggName = "liquidity_provisions"
-    DataRetentionPeriod = "1 year"
+    Password = "vega"
+    Database = "vega"
+    SocketDir = "/tmp"
+    MaxConnLifetime = "30m0s"
+    MaxConnLifetimeJitter = "5m0s"
+    MaxConnPoolSize = 0
+    MinConnPoolSize = 0
+  [SQLStore.ConnectionRetryConfig]
+    MaxRetries = 10
+    InitialInterval = "1s"
+    MaxInterval = "10s"
+    MaxElapsedTime = "1m0s"
+  [SQLStore.LogRotationConfig]
+    MaxSize = 100
+    MaxAge = 2
 
 [Gateway]
+  Port = 3008
+  IP = "0.0.0.0"
   Level = "Info"
   Timeout = "5s"
   SubscriptionRetries = 3
   GraphQLPlaygroundEnabled = true
+  MaxSubscriptionPerClient = 250
+  HTTPSEnabled = false
+  AutoCertDomain = ""
+  CertificateFile = ""
+  KeyFile = ""
   [Gateway.Node]
     Port = 3007
     IP = "0.0.0.0"
   [Gateway.GraphQL]
-    Port = 3008
-    IP = "0.0.0.0"
     Enabled = true
     ComplexityLimit = 0
-    HTTPSEnabled = false
-    AutoCertDomain = ""
-    CertificateFile = ""
-    KeyFile = ""
+    Endpoint = "/graphql"
   [Gateway.REST]
-    Port = 3009
-    IP = "0.0.0.0"
     Enabled = true
     APMEnabled = true
+  [Gateway.CORS]
+    AllowedOrigins = ["*"]
+    MaxAge = 7200
+  [Gateway.RateLimit]
+    Enabled = true
+    Rate = 20.0
+    Burst = 100
+    TTL = "1h0m0s"
+    BanFor = "10m0s"
 
 [Metrics]
   Level = "Info"
   Timeout = "5s"
-  Port = 2113
+  Port = 2112
   Path = "/metrics"
-  Enabled = true
+  Enabled = false
 
 [Broker]
   Level = "Info"
@@ -159,24 +133,53 @@ UlimitNOFile = 8192
   SocketServerOutboundBufferSize = 10000
   UseEventFile = false
   PanicOnError = false
+  UseBufferedEventSource = true
+  EventBusClientBufferSize = 100000
   [Broker.SocketConfig]
     IP = "0.0.0.0"
     Port = 3005
     MaxReceiveTimeouts = 3
     TransportType = "tcp"
   [Broker.FileEventSourceConfig]
-    File = "vega.evt"
+    Directory = "events"
     TimeBetweenBlocks = "1s"
     SendChannelBufferSize = 1000
+  [Broker.BufferedEventSourceConfig]
+    EventsPerFile = 10000000
+    SendChannelBufferSize = 10000
+    Archive = true
+    ArchiveMaximumSizeBytes = 1000000000
 
 [Service]
   Level = "Info"
 
 [Pprof]
-  Level = "Debug"
+  Level = "Info"
   Enabled = false
-  Port = 6062
-  ProfilesDir = "/home/vega/pprof/datanode"
+  Port = 6060
+  ProfilesDir = "/tmp"
   BlockProfileRate = 0
   MutexProfileFraction = 0
   WriteEvery = "15m0s"
+
+[NetworkHistory]
+  Level = "Info"
+  Enabled = true
+  WipeOnStartup = false
+  Publish = true
+  FetchRetryMax = 10
+  RetryTimeout = "5s"
+  [NetworkHistory.Store]
+    PeerID = "12D3KooWFdPdkrNnqkmTGifa6A8xFhE7vGgJvcg1vtHa858q42tU"
+    PrivKey = "CAESQN1Ek2A4p+mnJOOkXA8WDovxXA1/pVWLbW8qA+PAKM4PVlZj1NHbyxmAbbCM0icZjCB5shJOBvayBm41kgsaKSU="
+    BootstrapPeers = []
+    SwarmPort = 4001
+    SwarmKeyOverride = ""
+    HistoryRetentionBlockSpan = 9223372036854775807
+  [NetworkHistory.Snapshot]
+    WaitForCreationLockTimeout = "5m0s"
+  [NetworkHistory.Initialise]
+    ToSegment = ""
+    MinimumBlockCount = 1
+    TimeOut = "1m0s"
+    GrpcAPIPorts = []
